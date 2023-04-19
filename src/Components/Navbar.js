@@ -34,11 +34,11 @@ function NavBar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "#708090" }}>
+    <AppBar position="sticky" style={{ backgroundColor: "#708090" }}>
       <CssBaseline />
       <Toolbar>
         <div className={classes.navlinks}>
-        <Typography variant="h5" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
           Welcome to Portland
         </Typography>
           <Link to="/" className={classes.link} style={{ display: "none" }}>
