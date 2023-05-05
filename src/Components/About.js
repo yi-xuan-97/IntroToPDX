@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
-import img from "../Img/waterfront.png";
+import img from "../Img/cannon.png";
 import "../Styles/About.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,14 +19,6 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: "12vh",
   },
-  alert: {
-    textAlign: "left",
-    width: "50%",
-    height: "10vh",
-    marginLeft: "27%",
-    marginTop: "2%",
-    display: "none",
-  },
 }));
 
 function About() {
@@ -34,7 +26,7 @@ function About() {
 
   return (
     <div className="about">
-      <Grid container spacing={2} className="gridContainer">
+      <Grid container className="gridContainer">
         <Grid item xs={4} className={classes.pic}>
           <img
             src={img}
@@ -62,7 +54,9 @@ function About() {
       </Grid>
       <form className="about_form">
         <p className="about_info">
-          Please let me know anything you would like to share that you found interesting about Portland or your thought on this website.
+          Let me know anything you would like to share that you think could be
+          interesting or your thought on this website or anything that you would
+          like to say to me!
         </p>
         <div className="form_info">
           <TextField

@@ -1,35 +1,36 @@
-.gridContainer{
-    text-align: left;
-    padding: 2%;
+.gridContainer {
+  text-align: left;
+  padding: 2%;
 }
 
-.about_img{
-    width: 100%;
-    margin-top: 4%;
+.about_img {
+  width: 100%;
+  margin-top: 4%;
 }
 
-.para{
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-    margin-left: 8%;
+.para {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  margin-left: 8%;
 }
 
 .about_form {
-    text-align: center;
-    margin: 2%;
-    margin-left: 25%;
-    padding-bottom: 2%;
-    width: 55vw;
-    border-style: solid;
-    border-color: grey;
-    border-radius: 1px;
-    border-width: 1px;
-  }
+  text-align: center;
+  outline-style: outset;
+  margin: 2%;
+  margin-left: 20%;
+  padding-bottom: 2%;
+  width: 60%;
+  border-style: outset;
+  border-color: grey;
+  border-radius: 2px;
+  border-width: 3px;
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .about_info{
-    width: 90%;
-    margin-top: 5%;
-    margin-left: 5%;
-    font-size: large;
-
-  }
+.about_info {
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: large;
+}
