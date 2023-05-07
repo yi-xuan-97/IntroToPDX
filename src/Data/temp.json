@@ -1,14 +1,14 @@
 [
-  { "label": 1, "value": "37°F to 47°F" },
-  { "label": 2, "value": "39°F to 51°F" },
-  { "label": 3, "value": "42°F to 57°F" },
-  { "label": 4, "value": "45°F to 62°F" },
-  { "label": 5, "value": "51°F to 68°F" },
-  { "label": 6, "value": "56°F to 75°F" },
-  { "label": 7, "value": "60°F to 82°F" },
-  { "label": 8, "value": "60°F to 82°F" },
-  { "label": 9, "value": "54°F to 76°F" },
-  { "label": 10, "value": "47°F to 64°F" },
-  { "label": 11, "value": "41°F to 53°F" },
-  { "label": 12, "value": "36°F to 46°F" }
+  { "label": "January", "value": "37°F to 47°F" },
+  { "label": "February", "value": "39°F to 51°F" },
+  { "label": "March", "value": "42°F to 57°F" },
+  { "label": "April", "value": "45°F to 62°F" },
+  { "label": "May", "value": "51°F to 68°F" },
+  { "label": "June", "value": "56°F to 75°F" },
+  { "label": "July", "value": "60°F to 82°F" },
+  { "label": "August", "value": "60°F to 82°F" },
+  { "label": "September", "value": "54°F to 76°F" },
+  { "label": "October", "value": "47°F to 64°F" },
+  { "label": "November", "value": "41°F to 53°F" },
+  { "label": "December", "value": "36°F to 46°F" }
 ]

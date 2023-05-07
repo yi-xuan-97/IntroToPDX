@@ -1,0 +1,26 @@
+.temp_des {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.temp_des2 {
+  font-size: larger;
+}
+
+.welcome {
+  text-align: left;
+  margin: 2%;
+  margin-top: 3%;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Mynerve", cursive;
+}
+
+.pic1 {
+    width: 90%;
+    height: 90%;
+}
+
+.test {
+    
+}
