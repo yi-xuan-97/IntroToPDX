@@ -1,5 +1,5 @@
 import "./App.css";
-import { NavBar, Home, About, AboutPortland, Things, Footer } from "./Components";
+import { NavBar, Home, About, AboutPortland, Things, Footer, Todo } from "./Components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
             <Route exact path="/AboutPortland" element={<AboutPortland />} />
             <Route exact path="/About" element={<About />} />
             <Route exact path="/Things" element={<Things />} />
+            <Route exact path="/Todo" element={<Todo />} />
           </Routes>
         </Router>
         <Footer />

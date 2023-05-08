@@ -53,6 +53,9 @@ function NavBar() {
           <Link to="/Things" className={classes.link}>
             Things to do
           </Link>
+          <Link to="/Todo" className={classes.link}>
+            Todo List
+          </Link>
           <Link to="/About" className={classes.link}>
             About Us
           </Link>

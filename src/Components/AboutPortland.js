@@ -1,21 +1,19 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Slider from "@material-ui/core/Slider";
 import temp_data from "../Data/temp.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Switch from "@material-ui/core/Switch";
 import Grid from "@material-ui/core/Grid";
 import "../Styles/AboutPortland.css";
-import pic1 from "../Img/subset.png";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import { ImageList } from "@material-ui/core";
 import ImageListItem from "@material-ui/core/ImageListItem";
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
-import 'react-horizontal-scrolling-menu/dist/styles.css';
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import "react-horizontal-scrolling-menu/dist/styles.css";
+import { ArrowBackIosRounded, ArrowForwardIosRounded } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -29,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2%",
   },
   root: {
-    width: "30vw",
+    width: "28vw",
+    listStyleType: "none",
   },
   imgG: {
     overflow: "hidden",
@@ -41,6 +40,16 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 140,
+  },
+  arrow: {
+    width: "5vw",
+    fontSize: 60,
+    marginTop: "10vh",
+    "&:hover": {
+      marginTop: "9vh",
+      color: "#323232",
+      fontSize: 80,
+    }, 
   },
 }));
 
@@ -144,6 +153,35 @@ function AboutPortland() {
     }
   };
 
+  function LeftArrow() {
+    const { isFirstItemVisible, scrollPrev } =
+      React.useContext(VisibilityContext);
+
+    return (
+      <ArrowBackIosRounded
+        className={classes.arrow}
+        disabled={isFirstItemVisible}
+        onClick={() => scrollPrev()}
+      >
+        Left
+      </ArrowBackIosRounded>
+    );
+  }
+
+  function RightArrow() {
+    const { isLastItemVisible, scrollNext } =
+      React.useContext(VisibilityContext);
+
+    return (
+      <ArrowForwardIosRounded
+        className={classes.arrow}
+        disabled={isLastItemVisible}
+        onClick={() => scrollNext()}
+      >
+        Right
+      </ArrowForwardIosRounded>
+    );
+  }
 
   useEffect(() => {
     get_weather();
@@ -155,7 +193,6 @@ function AboutPortland() {
 
   return (
     <div className="aboutportland">
-      {/* <h1>ABOUT PORTLAND</h1> */}
       <Grid container spacing={0}>
         <Grid item xs={9}>
           <p className="welcome">
@@ -198,21 +235,12 @@ function AboutPortland() {
           <p className="temp_des">{des}</p>
         </Grid>
         <Grid className={classes.tempContainer} container spacing={2}>
-          <Grid item xs={1}>
-            <div style={{ fontSize: "30px" }}>{" < "}</div>
-          </Grid>
-          <Grid item className="imgG" xs={10}>
-            <ImageList className={classes.imageList}>{cardData()}</ImageList>
-          </Grid>
-          <Grid item xs={1}>
-            <div style={{ fontSize: "30px" }}>{" > "}</div>
+          <Grid item className="imgG" xs={12}>
+            <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+              {cardData()}
+            </ScrollMenu>
           </Grid>
         </Grid>
-        <ScrollMenu
-          arrowLeft={<div style={{ fontSize: "30px" }}>{" < "}</div>}
-          arrowRight={<div style={{ fontSize: "30px" }}>{" > "}</div>}
-          data={cardData()}
-        />
       </Grid>
     </div>
   );

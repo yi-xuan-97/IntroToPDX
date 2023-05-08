@@ -1,13 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createStore, StoreProvider, action } from "easy-peasy";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider
+      store={createStore({
+        todo: [
+          "Salt & Straw",
+          "Screen Door",
+          "Voodoo Doughnut",
+          "Stretch The Noodle",
+          "Tov Coffee & Tea",
+        ],
+        settodo: action((state, newtodo) => {
+          state.todo = newtodo;
+        }),
+        done: [],
+        setdone: action((state, newsdone) => {
+          state.done = newsdone;
+        }),
+      })}
+    >
+      <App />
+    </StoreProvider>
   </React.StrictMode>
 );
 
