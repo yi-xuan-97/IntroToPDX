@@ -70,7 +70,7 @@ function Todo() {
   const [left, setLeft] = React.useState([]);
   const [right, setRight] = React.useState([]);
 
-  const [add, setadd] = useState("");
+  
   // const MemoizedInput = React.memo(InputComponent);
 
   const l = useStoreState((state) => state.todo);
@@ -160,70 +160,46 @@ function Todo() {
 
   function SimpleDialog(props) {
     const classes = useStyles();
-    const { onClose, selectedValue, open } = props;
 
-    const handleClose = () => {
-      onClose(selectedValue);
-    };
+    const [add, setadd] = useState("");
 
     const handleTextFieldChange = (event) => {
+      event.preventDefault();
       setadd(event.target.value);
     };
 
-    return (
-      // <Popover
-      //   className="todo_pop"
-      //   // id={id}
-      //   open={open}
-      //   // anchorEl={anchorEl}
-      //   onClose={handleClose}
-      //   anchorOrigin={{
-      //     vertical:  400,
-      //     horizontal: 500,
-      //   }}
-      // >
-      //   <div>
+    const handleAddClick = () => {
+      left.push(add);
+      handleClose();
+    };
 
-      //   <Typography className={classes.typography}>
-      //     The content of the Popover.
-      //   </Typography>
-      //   <TextField
-      //     className={classes.input}
-      //     onChange={(e) => {
-      //       console.log(e.target.value);
-      //       setadd(e.target.value);
-      //     }}
-      //     id="standard-basic"
-      //     label="Cannon beach"
-      //   />
-      // </Popover>
+    return (
       <Dialog
-        onClose={handleClose}
-        aria-labelledby="simple-dialog-title"
         open={open}
-        // className={classes.dialog}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="simple-dialog-title">
+        <DialogTitle id="form-dialog-title">
           ADD YOUR OWN PLAN into TO DO
         </DialogTitle>
         <DialogContent>
+          <DialogContentText>
+            To add new TODOs to this page, please enter it here. It will be add
+            to the list. e.g. Mt Hood
+          </DialogContentText>
           <TextField
+            margin="dense"
             className={classes.input}
             value={add}
             onChange={handleTextFieldChange}
             id="standard-basic"
-            label="Cannon beach"
+            label="TO DO HERE"
+            placeholder="Cannon beach"
+            autoFocus
           />
         </DialogContent>
         <DialogActions>
-          <Button
-            onClick={() => {
-              handleClose();
-              left.push(add);
-              console.log(left);
-            }}
-            color="primary"
-          >
+          <Button onClick={handleAddClick} color="primary" size="large">
             ADD
           </Button>
         </DialogActions>
