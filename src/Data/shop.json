@@ -1,53 +1,30 @@
 [
-    {
-      "id": 1,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 2,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 3,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 4,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 5,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 6,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 7,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 8,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 9,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 10,
-      "title": "",
-      "url": ""
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Clackamas Town Center",
+    "description": "A large shopping mall in Clackamas, Oregon, offering a wide variety of stores and restaurants.",
+    "url": "https://www.clackamastowncenter.com/",
+    "logo": "https://www.clackamastowncenter.com/content/dam/b2b/retail/property-images/clackasmas-homepage-seo-767x510.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Washington Square",
+    "description": "One of the largest shopping centers in Oregon, located in Tigard. It features a mix of high-end retailers, dining options, and entertainment.",
+    "url": "https://www.shopwashingtonsquare.com/",
+    "logo": "https://i0.wp.com/macerichtourism.com/wp-content/uploads/2018/06/Washington-Square-North-Entrance-and-CCF.jpg?fit=1024%2C628&ssl=1"
+  },
+  {
+    "id": 3,
+    "title": "Woodburn Premium Outlets",
+    "description": "An outlet shopping destination in Woodburn, Oregon, known for its discounted prices on a wide range of brands.",
+    "url": "https://www.premiumoutlets.com/outlet/woodburn",
+    "logo": "https://cdn-fsly.yottaa.net/58a4671832f01c09d60000d0/01ee2bd07e60013b5e040ead9ecbf798.yottaa.net/v~4b.da/content/businessimages/bannerimages/893/01_1920x800.jpg?yocs=e_NA_"
+  },
+  {
+    "id": 4,
+    "title": "Pioneer Place",
+    "description": "A public square in downtown Portland, known for its historical significance and outdoor events.",
+    "url": "https://www.pioneerplace.com/en.html",
+    "logo": "https://gizmostoragetest.blob.core.windows.net/corporate-property-hero-images/1614227513645-pioneer-place_carousel_4.jpg"
+  }
+]

@@ -10,18 +10,21 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { NaturePeople, Store, Streetview } from "@material-ui/icons";
+import {
+  CheckCircle,
+  NaturePeople,
+  Store,
+  Streetview,
+} from "@material-ui/icons";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Button } from "@material-ui/core";
-import {
-  useStoreActions,
-  useStoreState,
-} from "easy-peasy";
-import food from "../Data/food.json";
+import { Button, Collapse } from "@material-ui/core";
+import { useStoreActions, useStoreState } from "easy-peasy";
+import { food, street, shop, nature } from "../Data";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -38,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     fontSize: "20px",
   },
+  alert: {
+    width: "80%",
+    marginLeft: "10%",
+    marginTop: "2%",
+    position: "absolute",
+    zIndex: "1"
+  },
 }));
 
 function Things() {
@@ -45,12 +55,25 @@ function Things() {
 
   const [todo, settodo] = useState([]);
   const l = useStoreState((state) => state.todo);
+  const r = useStoreState((state) => state.done);
   const setl = useStoreActions((actions) => actions.settodo);
+  const [check, setcheck] = useState([]);
+  const [open,setopen] = useState(false);
 
-  const food_list = (items) => {
+  const list = (items) => {
     const handleAdd = (event) => {
       event.stopPropagation();
-      todo.push(event.target.parentNode.id);
+      const temp = event.target.parentNode.id;
+      if (!check.some((v) => v === temp)) {
+        todo.push(temp);
+        check.push(temp);
+      }
+      else{
+        setopen(true);
+        setTimeout(function () {
+          setopen(false);
+        }, 3000);
+      }
     };
 
     return items.map((value) => {
@@ -92,6 +115,7 @@ function Things() {
 
   useEffect(() => {
     settodo(l);
+    setcheck(l.concat(r));
   }, []);
 
   useEffect(() => {
@@ -100,6 +124,11 @@ function Things() {
 
   return (
     <div className="things">
+      <Collapse in={open}>
+          <Alert severity="error" className={classes.alert}>
+            You already added this!
+          </Alert>
+        </Collapse>
       <Timeline align="alternate">
         <TimelineItem>
           <TimelineOppositeContent>
@@ -117,7 +146,7 @@ function Things() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>{food_list(food)}</TimelineContent>
+          <TimelineContent>{list(food)}</TimelineContent>
         </TimelineItem>
 
         <TimelineItem>
@@ -136,14 +165,7 @@ function Things() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>
-            <Paper elevation={3} className={classes.paper}>
-              <Typography variant="h6" component="h1">
-                Street View
-              </Typography>
-              <Typography>Because it&apos;s awesome!</Typography>
-            </Paper>
-          </TimelineContent>
+          <TimelineContent>{list(street)}</TimelineContent>
         </TimelineItem>
 
         <TimelineItem>
@@ -162,14 +184,7 @@ function Things() {
             </TimelineDot>
             <TimelineConnector className={classes.secondaryTail} />
           </TimelineSeparator>
-          <TimelineContent>
-            <Paper elevation={3} className={classes.paper}>
-              <Typography variant="h6" component="h1">
-                Shopping
-              </Typography>
-              <Typography>Because you need rest</Typography>
-            </Paper>
-          </TimelineContent>
+          <TimelineContent>{list(shop)}</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
@@ -186,14 +201,7 @@ function Things() {
               <NaturePeople />
             </TimelineDot>
           </TimelineSeparator>
-          <TimelineContent>
-            <Paper elevation={3} className={classes.paper}>
-              <Typography variant="h6" component="h1">
-                Nature
-              </Typography>
-              <Typography>Because this is the life you love!</Typography>
-            </Paper>
-          </TimelineContent>
+          <TimelineContent>{list(nature)}</TimelineContent>
           <TimelineSeparator />
         </TimelineItem>
       </Timeline>

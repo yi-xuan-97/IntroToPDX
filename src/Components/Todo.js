@@ -47,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   alert: {
-    // display: "none",
     width: "80%",
     marginLeft: "10%",
     marginTop: "2%",

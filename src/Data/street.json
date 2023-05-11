@@ -1,53 +1,58 @@
 [
-    {
-      "id": 1,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 2,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 3,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 4,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 5,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 6,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 7,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 8,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 9,
-      "title": "",
-      "url": ""
-    },
-    {
-      "id": 10,
-      "title": "",
-      "url": ""
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Powell's Bookstore",
+    "description": "One of the world's largest independent bookstores.",
+    "url": "https://www.powells.com/",
+    "logo": "https://www.powells.com/portals/0/hero-nightmarquee-900-2019-_1_.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "OMSI",
+    "description": "A science and technology museum with interactive exhibits.",
+    "url": "https://www.omsi.edu/",
+    "logo": "https://katu.com/resources/media/00338a44-d1b6-443f-afbd-90e241d5407a-large1x1_OMSIexterior2captioned.jpg?1616113283854"
+  },
+  {
+    "id": 3,
+    "title": "Mill End Park",
+    "description": "A small park located on a median strip in Portland.",
+    "url": "https://www.portland.gov/parks/mill-ends-park",
+    "logo": "https://www.portland.gov/sites/default/files/styles/2_1_1600w/public/2022/mill-ends-park-reinstalled-jan-12-2022-41.jpg?itok=H0ZMV4yx"
+  },
+  {
+    "id": 4,
+    "title": "Portland Farmers Market",
+    "description": "A popular farmers market featuring local produce and products.",
+    "url": "https://www.portlandfarmersmarket.org/",
+    "logo": "https://www.portlandfarmersmarket.org/wp-content/uploads/2016/04/PFM-Logo-Horizontal-Green.png"
+  },
+  {
+    "id": 5,
+    "title": "Portland Saturday Market",
+    "description": "An outdoor arts and crafts market held on weekends.",
+    "url": "https://www.portlandsaturdaymarket.com/",
+    "logo": "https://www.portlandsaturdaymarket.com/content/images/PSM_Sidewalk_sign.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Japanese Garden",
+    "description": "A serene and beautiful Japanese garden in Portland.",
+    "url": "https://japanesegarden.org/",
+    "logo": "https://japanesegarden.org/wp-content/uploads/2017/03/Flat-Garden-and-Pavilion-from-Beneath-the-Weeping-Cherry.-Photo-by-Joanthan-Ley.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Rose Garden",
+    "description": "A garden featuring a wide variety of roses.",
+    "url": "https://www.portland.gov/parks/washington-park-international-rose-test-garden",
+    "logo": "https://www.portland.gov/sites/default/files/styles/2_1_1600w/public/2020-04/international-rose-test-garden.jpg?itok=Vgm5tgty"
+  },
+  {
+    "id": 8,
+    "title": "Lan Su Chinese Garden",
+    "description": "An authentic Chinese garden in Portland's Old Town Chinatown.",
+    "url": "https://lansugarden.org/",
+    "logo": "https://lansugarden.org/content/CI_assets/12/spring_at_lan_su_chinese_garden__page-header-gallery@2x.jpg"
+  }
+]
