@@ -221,6 +221,7 @@ function AboutPortland() {
               <Grid item>°F</Grid>
             </Grid>
           </Typography>
+          <p>Request demo API <a href="https://cors-anywhere.herokuapp.com/corsdemo">here</a> first </p>
         </Grid>
         <Grid item xs={2}>
           <p className="temp_des">

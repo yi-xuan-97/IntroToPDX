@@ -10,13 +10,7 @@ root.render(
   <React.StrictMode>
     <StoreProvider
       store={createStore({
-        todo: [
-          "Salt & Straw",
-          "Screen Door",
-          "Voodoo Doughnut",
-          "Stretch The Noodle",
-          "Tov Coffee & Tea",
-        ],
+        todo: [],
         settodo: action((state, newtodo) => {
           state.todo = newtodo;
         }),

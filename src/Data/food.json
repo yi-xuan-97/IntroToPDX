@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Salt & Straw",
+    "description": "Gourmet ice cream shop with unique flavors and local ingredients.",
+    "url": "https://saltandstraw.com/",
+    "logo": "https://cdn.shopify.com/s/files/1/0092/2815/7033/files/salt-and-straw-logo-2019_540x.png?v=1614342616"
+  },
+  {
+    "id": 2,
+    "title": "Screen Door",
+    "description": "Southern-style cuisine with a Pacific Northwest twist.",
+    "url": "https://screendoorrestaurant.com/",
+    "logo": "https://screendoorrestaurant.com/wp-content/uploads/2020/12/screendoor-logo-old.svg"
+  },
+  {
+    "id": 3,
+    "title": "Little Big Burger",
+    "description": "Gourmet burgers made with local ingredients.",
+    "url": "https://littlebigburger.com/",
+    "logo": "https://littlebigburger.com/wp-content/uploads/2021/02/LBB-Burger-Logo-White.png"
+  },
+  {
+    "id": 4,
+    "title": "Stretch the Noodle",
+    "description": "Hand-pulled Chinese noodles and dumplings.",
+    "url": "http://www.stretch-the-noodle.com/",
+    "logo": "http://www.stretch-the-noodle.com/media/xiinx5s5/39f0ec13-4760-443c-9e24-0522d7d902b1.jpg?anchor=center&amp;mode=crop&amp;width=255&amp;height=300&amp;rnd=132241134388030000"
+  },
+  {
+    "id": 5,
+    "title": "Voodoo Doughnut",
+    "description": "Quirky doughnut shop with creative flavors and designs.",
+    "url": "https://voodoodoughnut.com/",
+    "logo": "https://www.voodoodoughnut.com/wp-content/uploads/2022/05/Logo_Tiny.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Tov Coffee & Tea",
+    "description": "Cozy cafe with artisan coffee and tea.",
+    "url": "https://tovcoffee.com/",
+    "logo": "https://static.wixstatic.com/media/5b6096_8d62376a68a14dd4ad3d104f5c958e1d~mv2.png/v1/fill/w_208,h_146,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Purple-Logo%20no%20text_4x.png"
+  },
+  {
+    "id": 7,
+    "title": "Luc Lac",
+    "description": "Hip Vietnamese spot with pho, banh mi & other classic dishes.",
+    "url": "https://luclackitchen.com/",
+    "logo": "https://luclackitchen.com/img/ll-logo-dark.png?_cchid=cbf219935c7621ea5d47578a77082a2a"
+  },
+  {
+    "id": 8,
+    "title": "HK Cafe",
+    "description": "Casual Hong Kong-style cafe with a diverse menu.",
+    "url": "https://hkcafetogo.com/#home",
+    "logo": "https://s3-media0.fl.yelpcdn.com/bphoto/bnYU6S-KDMnVt-4BFIBnIg/348s.jpg"
+  },
+  {
+    "id": 9,
+    "title": "K-Town BBQ",
+    "description": "All-you-can-eat Korean BBQ with a variety of meats and sides.",
+    "url": "https://www.ktownkoreanbbq.com/",
+    "logo": "https://static.wixstatic.com/media/fa33b9_16e63f8ae13e49109f2e3cfcb191942c.png/v1/fill/w_304,h_307,al_c,lg_1,q_85,enc_auto/fa33b9_16e63f8ae13e49109f2e3cfcb191942c.png"
+  },
+  {
+    "id": 10,
+    "title": "Nong's Khao Man Gai",
+    "description": "Thai food cart serving up classic chicken and rice dishes.",
+    "url": "https://www.khaomangai.com/",
+    "logo": "https://cdn.shopify.com/s/files/1/0537/1674/6428/files/NKMG-logo-black_500x.png?v=1614917968"
+  }
+]

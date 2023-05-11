@@ -9,7 +9,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
-import { CardHeader } from "@material-ui/core";
+import { CardHeader, Collapse, IconButton } from "@material-ui/core";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import TextField from "@material-ui/core/TextField";
@@ -18,22 +18,16 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-import { Popover } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
-import {
-  createStore,
-  action,
-  useStoreActions,
-  useStoreState,
-} from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 import Dialog from "@material-ui/core/Dialog";
+import { Alert } from "@material-ui/lab";
+import CloseIcon from "@material-ui/icons/Close";
 
 import "../Styles/Todo.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    marginTop: "2%",
     marginBottom: "2%",
   },
   paper: {
@@ -44,15 +38,20 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(0.5, 0),
   },
-  add: {},
   but: {
     position: "absolute",
-    right: "15px",
-    bottom: theme.spacing(10),
+    right: theme.spacing(8),
+    bottom: theme.spacing(5),
   },
   input: {
     width: "100%",
-    // margin: "10%",
+  },
+  alert: {
+    // display: "none",
+    width: "80%",
+    marginLeft: "10%",
+    marginTop: "2%",
+    position: "absolute",
   },
 }));
 
@@ -70,9 +69,6 @@ function Todo() {
   const [left, setLeft] = React.useState([]);
   const [right, setRight] = React.useState([]);
 
-  
-  // const MemoizedInput = React.memo(InputComponent);
-
   const l = useStoreState((state) => state.todo);
   const r = useStoreState((state) => state.done);
   const setl = useStoreActions((actions) => actions.settodo);
@@ -82,6 +78,9 @@ function Todo() {
   const rightChecked = intersection(checked, right);
 
   const [open, setOpen] = React.useState(false);
+
+  const [suc, setsuc] = useState(false);
+  const [err, seterr] = useState(false);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -118,6 +117,24 @@ function Todo() {
     setRight([]);
   };
 
+  const handleDelete = (event) => {
+    event.preventDefault();
+    const temp = event.target.id;
+    if (left.some((v) => v === temp)) {
+      let index = left.indexOf(temp);
+      if (index !== -1) {
+        left.splice(index, 1);
+        setLeft(left);
+      }
+    } else if (right.some((v) => v === temp)) {
+      let index = right.indexOf(temp);
+      if (index !== -1) {
+        right.splice(index, 1);
+        setRight(right);
+      }
+    }
+  };
+
   const customList = (items, title) => (
     <Paper className={classes.paper}>
       <List dense component="div" role="list">
@@ -142,6 +159,15 @@ function Todo() {
                 />
               </ListItemIcon>
               <ListItemText id={labelId} primary={`${value}`} />
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={handleDelete}
+                id={value}
+              >
+                <CloseIcon id={value} fontSize="inherit" />
+              </IconButton>
             </ListItem>
           );
         })}
@@ -169,7 +195,18 @@ function Todo() {
     };
 
     const handleAddClick = () => {
-      left.push(add);
+      if (!left.some((v) => v === add)) {
+        left.push(add);
+        setsuc(true);
+        setTimeout(function () {
+          setsuc(false);
+        }, 3000);
+      } else {
+        seterr(true);
+        setTimeout(function () {
+          seterr(false);
+        }, 3000);
+      }
       handleClose();
     };
 
@@ -225,6 +262,21 @@ function Todo() {
       alignItems="center"
       className={classes.root}
     >
+      <Grid item xs={12}>
+        <Collapse in={suc}>
+          <Alert severity="success" className={classes.alert}>
+            Successfully added!!
+          </Alert>
+        </Collapse>
+        <Collapse in={err}>
+          <Alert severity="error" className={classes.alert}>
+            You already added this!
+          </Alert>
+        </Collapse>
+        <h1 className="todo_title">
+          Add your Todos manually or from Things to do page
+        </h1>
+      </Grid>
       <Grid item>{customList(left, "TO DO :)")}</Grid>
       <Grid item>
         <Grid container direction="column" alignItems="center">

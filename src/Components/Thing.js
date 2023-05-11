@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
@@ -15,9 +15,13 @@ import { NaturePeople, Store, Streetview } from "@material-ui/icons";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Button } from "@material-ui/core";
+import {
+  useStoreActions,
+  useStoreState,
+} from "easy-peasy";
+import food from "../Data/food.json";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -30,10 +34,69 @@ const useStyles = makeStyles((theme) => ({
   day: {
     marginTop: theme.spacing(2),
   },
+  heading: {
+    margin: "auto",
+    fontSize: "20px",
+  },
 }));
 
 function Things() {
   const classes = useStyles();
+
+  const [todo, settodo] = useState([]);
+  const l = useStoreState((state) => state.todo);
+  const setl = useStoreActions((actions) => actions.settodo);
+
+  const food_list = (items) => {
+    const handleAdd = (event) => {
+      event.stopPropagation();
+      todo.push(event.target.parentNode.id);
+    };
+
+    return items.map((value) => {
+      return (
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-label="Expand"
+            aria-controls="additional-actions1-content"
+            id="additional-actions1-header"
+          >
+            <a href={value.url}>
+              <img
+                src={value.logo}
+                alt="voodoo log"
+                onClick={(event) => event.stopPropagation()}
+                width={90}
+                height={80}
+              />
+            </a>
+            <Typography className={classes.heading}>{value.title}</Typography>
+            <Button
+              data-button-key={value.title}
+              className={value.title}
+              color="primary"
+              onClick={handleAdd}
+              id={value.title}
+            >
+              ADD
+            </Button>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography color="textSecondary">{value.description}</Typography>
+          </AccordionDetails>
+        </Accordion>
+      );
+    });
+  };
+
+  useEffect(() => {
+    settodo(l);
+  }, []);
+
+  useEffect(() => {
+    setl(todo);
+  }, [todo, setl]);
 
   return (
     <div className="things">
@@ -54,75 +117,7 @@ function Things() {
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-label="Expand"
-                aria-controls="additional-actions1-content"
-                id="additional-actions1-header"
-              >
-                <FormControlLabel
-                  aria-label="Acknowledge"
-                  onClick={(event) => event.stopPropagation()}
-                  onFocus={(event) => event.stopPropagation()}
-                  control={<Checkbox />}
-                  label="I acknowledge that I should stop the click event propagation"
-                />
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography color="textSecondary">
-                  The click event of the nested action will propagate up and
-                  expand the accordion unless you explicitly stop it.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-label="Expand"
-                aria-controls="additional-actions2-content"
-                id="additional-actions2-header"
-              >
-                <FormControlLabel
-                  aria-label="Acknowledge"
-                  onClick={(event) => event.stopPropagation()}
-                  onFocus={(event) => event.stopPropagation()}
-                  control={<Checkbox />}
-                  label="I acknowledge that I should stop the focus event propagation"
-                />
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography color="textSecondary">
-                  The focus event of the nested action will propagate up and
-                  also focus the accordion unless you explicitly stop it.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-label="Expand"
-                aria-controls="additional-actions3-content"
-                id="additional-actions3-header"
-              >
-                <FormControlLabel
-                  aria-label="Acknowledge"
-                  onClick={(event) => event.stopPropagation()}
-                  onFocus={(event) => event.stopPropagation()}
-                  control={<Checkbox />}
-                  label="I acknowledge that I should provide an aria-label on each action that I add"
-                />
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography color="textSecondary">
-                  If you forget to put an aria-label on the nested action, the
-                  label of the action will also be included in the label of the
-                  parent button that controls the accordion expansion.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </TimelineContent>
+          <TimelineContent>{food_list(food)}</TimelineContent>
         </TimelineItem>
 
         <TimelineItem>
