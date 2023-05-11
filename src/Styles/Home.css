@@ -1,18 +1,18 @@
-.gridContainer{
-    margin: 2%;
+.gridContainer {
+  margin: 2%;
 }
-.home_intro{
-    text-align: left;
-    margin: 4%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-}
-
-.home_img1{
-    width: 100%;
+.home_intro {
+  text-align: left;
+  margin: 4%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
 }
 
-.home_intro{
-    margin-left: 10%;
-    margin-top: 0;
+.home_img1 {
+  width: 100%;
+}
+
+.home_intro {
+  margin-left: 10%;
+  margin-top: 0;
 }

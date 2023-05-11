@@ -39,8 +39,8 @@ function NavBar() {
       <Toolbar>
         <div className={classes.navlinks}>
           <Typography variant="h5" className={classes.title}>
-          Welcome to Portland
-        </Typography>
+            Welcome to Portland
+          </Typography>
           <Link to="/" className={classes.link} style={{ display: "none" }}>
             /
           </Link>

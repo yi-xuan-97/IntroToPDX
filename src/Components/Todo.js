@@ -154,7 +154,7 @@ function Todo() {
                   checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
                   disableRipple
-                  inputProps={{ "aria-labelledby": labelId }}
+                  inputProps={{ "aria-labelledby": { labelId } }}
                 />
               </ListItemIcon>
               <ListItemText id={labelId} primary={`${value}`} />

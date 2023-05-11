@@ -13,7 +13,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
-import { ArrowBackIosRounded, ArrowForwardIosRounded } from "@material-ui/icons";
+import {
+  ArrowBackIosRounded,
+  ArrowForwardIosRounded,
+} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -49,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "9vh",
       color: "#323232",
       fontSize: 80,
-    }, 
+    },
   },
 }));
 
@@ -221,7 +224,11 @@ function AboutPortland() {
               <Grid item>°F</Grid>
             </Grid>
           </Typography>
-          <p>Request demo API <a href="https://cors-anywhere.herokuapp.com/corsdemo">here</a> first </p>
+          <p>
+            Request demo API{" "}
+            <a href="https://cors-anywhere.herokuapp.com/corsdemo">here</a>{" "}
+            first{" "}
+          </p>
         </Grid>
         <Grid item xs={2}>
           <p className="temp_des">

@@ -8,19 +8,12 @@ import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import {
-  CheckCircle,
-  NaturePeople,
-  Store,
-  Streetview,
-} from "@material-ui/icons";
+import { NaturePeople, Store, Streetview } from "@material-ui/icons";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Button, Collapse } from "@material-ui/core";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { food, street, shop, nature } from "../Data";
@@ -46,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "10%",
     marginTop: "2%",
     position: "absolute",
-    zIndex: "1"
+    zIndex: "1",
   },
 }));
 
@@ -58,7 +51,7 @@ function Things() {
   const r = useStoreState((state) => state.done);
   const setl = useStoreActions((actions) => actions.settodo);
   const [check, setcheck] = useState([]);
-  const [open,setopen] = useState(false);
+  const [open, setopen] = useState(false);
 
   const list = (items) => {
     const handleAdd = (event) => {
@@ -67,8 +60,7 @@ function Things() {
       if (!check.some((v) => v === temp)) {
         todo.push(temp);
         check.push(temp);
-      }
-      else{
+      } else {
         setopen(true);
         setTimeout(function () {
           setopen(false);
@@ -79,16 +71,11 @@ function Things() {
     return items.map((value) => {
       return (
         <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-label="Expand"
-            aria-controls="additional-actions1-content"
-            id="additional-actions1-header"
-          >
+          <AccordionSummary>
             <a href={value.url}>
               <img
                 src={value.logo}
-                alt="voodoo log"
+                alt={`${value.description}`}
                 onClick={(event) => event.stopPropagation()}
                 width={90}
                 height={80}
@@ -125,10 +112,10 @@ function Things() {
   return (
     <div className="things">
       <Collapse in={open}>
-          <Alert severity="error" className={classes.alert}>
-            You already added this!
-          </Alert>
-        </Collapse>
+        <Alert severity="error" className={classes.alert}>
+          You already added this!
+        </Alert>
+      </Collapse>
       <Timeline align="alternate">
         <TimelineItem>
           <TimelineOppositeContent>

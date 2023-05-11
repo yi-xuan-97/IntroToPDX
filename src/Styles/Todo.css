@@ -1,8 +1,8 @@
 .todo_pop {
-    background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .todo_title {
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 1%;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1%;
 }
