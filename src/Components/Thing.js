@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   day: {
-    marginTop: theme.spacing(2),
+    // marginTop: theme.spacing(2)),
   },
   heading: {
     margin: "auto",
@@ -41,6 +41,14 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     zIndex: "1",
   },
+  title: {
+    height: theme.spacing(4),
+    marginTop: "5%",
+    fontSize: "20px",
+  },
+  web: {
+    textAlign: "left",
+  }
 }));
 
 function Things() {
@@ -57,14 +65,17 @@ function Things() {
     const handleAdd = (event) => {
       event.stopPropagation();
       const temp = event.target.parentNode.id;
-      if (!check.some((v) => v === temp)) {
-        todo.push(temp);
-        check.push(temp);
-      } else {
-        setopen(true);
-        setTimeout(function () {
-          setopen(false);
-        }, 3000);
+      console.log(temp);
+      if (temp.trim() !== "") {
+        if (!check.some((v) => v === temp)) {
+          todo.push(temp);
+          check.push(temp);
+        } else {
+          setopen(true);
+          setTimeout(function () {
+            setopen(false);
+          }, 3000);
+        }
       }
     };
 
@@ -75,7 +86,7 @@ function Things() {
             <a href={value.url}>
               <img
                 src={value.logo}
-                alt={`${value.description}`}
+                alt={`logo of${value.title}`}
                 onClick={(event) => event.stopPropagation()}
                 width={90}
                 height={80}
@@ -84,16 +95,17 @@ function Things() {
             <Typography className={classes.heading}>{value.title}</Typography>
             <Button
               data-button-key={value.title}
-              className={value.title}
+              className={classes.title}
               color="primary"
               onClick={handleAdd}
               id={value.title}
+              size="large"
             >
               ADD
             </Button>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography color="textSecondary">{value.description}</Typography>
+            <Typography>{value.description}{<p className={classes.web}>Click <a href={value.url}>here</a> to visit website</p>}</Typography>
           </AccordionDetails>
         </Accordion>
       );
@@ -120,11 +132,11 @@ function Things() {
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography
-              variant="body2"
+              variant="h4"
               className={classes.day}
-              color="textSecondary"
+              color="primary"
             >
-              Step 1
+              Food and drink
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -139,11 +151,11 @@ function Things() {
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography
-              variant="body2"
+              variant="h4"
               className={classes.day}
-              color="textSecondary"
+              color="primary"
             >
-              Step 2
+              Attraction
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -155,14 +167,15 @@ function Things() {
           <TimelineContent>{list(street)}</TimelineContent>
         </TimelineItem>
 
+
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography
-              variant="body2"
+              variant="h4"
               className={classes.day}
-              color="textSecondary"
+              color="primary"
             >
-              Step 3
+              Shop
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -176,11 +189,11 @@ function Things() {
         <TimelineItem>
           <TimelineOppositeContent>
             <Typography
-              variant="body2"
+              variant="h4"
               className={classes.day}
-              color="textSecondary"
+              color="primary"
             >
-              Step 4
+              Nature View
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>

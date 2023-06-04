@@ -17,6 +17,12 @@ import {
   ArrowBackIosRounded,
   ArrowForwardIosRounded,
 } from "@material-ui/icons";
+import key from "../config.json";
+import img1 from "../Img/keep.jpeg";
+import img2 from "../Img/hike.jpeg";
+import img3 from "../Img/food.jpeg";
+import img4 from "../Img/value.webp";
+
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -54,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 80,
     },
   },
+  container: {
+    marginLeft: "2%",
+    marginRight: "2%",
+  },
 }));
 
 function AboutPortland() {
@@ -68,10 +78,8 @@ function AboutPortland() {
   const [des, setdes] = useState("Cloud");
   const [img_arr, setimgarr] = useState([]);
 
-  const key1 = "677b08102882beabdba992496310ea0c";
-  const key2 = "y1vXu0rMUQPMAzJ8HTwW7E5Wzfy1O5eH1xxThZbxbp8";
-  const api1 = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?id=5746545&appid=${key1}&units=${unit}`;
-  const api2 = `https://api.unsplash.com/search/photos?per_page=12&query=portland&client_id=${key2}`;
+  const api1 = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?id=5746545&appid=${key.key1}&units=${unit}`;
+  const api2 = `https://api.unsplash.com/search/photos?per_page=12&query=portland&client_id=${key.key2}`;
 
   const get_weather = () => {
     axios
@@ -199,10 +207,8 @@ function AboutPortland() {
       <Grid container spacing={0}>
         <Grid item xs={9}>
           <p className="welcome">
-            Before embarking on your journey to Portland, it would behoove you
-            to check the forecast as the region is known for its rainy weather.
-            Come prepared with appropriate attire and protective gear to ensure
-            a pleasant stay
+            Prepare for rain in Portland throughout the year as it can occur at
+            any time and any place
           </p>
         </Grid>
         <Grid item xs={1}>
@@ -247,6 +253,69 @@ function AboutPortland() {
             <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
               {cardData()}
             </ScrollMenu>
+          </Grid>
+        </Grid>
+        <Grid container className={classes.container} spacing={3}>
+          <Grid item xs={5}>
+            <img
+              src={img1}
+              alt="sign of keep portland weird"
+              className="img1"
+            />
+          </Grid>
+          <Grid item xs={7}>
+            <h1 className="title">Cultural uniqueness</h1>
+            <p className="about_info">
+              Portland is known for its vibrant and alternative culture. It
+              embraces individuality, creativity, and unconventional thinking.
+              The city has a thriving arts scene, a strong emphasis on local
+              businesses, and a commitment to sustainability and
+              eco-friendliness.
+            </p>
+          </Grid>
+          <Grid item xs={7}>
+            <h1 className="title">Natural beauty</h1>
+            <p className="about_info">
+              Portland is surrounded by stunning natural beauty. The city is
+              located in the Pacific Northwest region, with easy access to
+              picturesque landscapes, including nearby mountains, forests, and
+              the Columbia River Gorge. The abundance of green spaces and parks
+              within the city also adds to its appeal.
+            </p>
+          </Grid>
+          <Grid item xs={5}>
+            <img src={img2} alt="Multnomah Falls" className="img1" />
+          </Grid>
+
+          <Grid item xs={5}>
+            <img
+              src={img3}
+              alt="sign of keep portland weird"
+              className="img1"
+            />
+          </Grid>
+          <Grid item xs={7}>
+            <h1 className="title">Food and drink scene</h1>
+            <p className="about_info">
+              Portland has a renowned food and drink scene. It is home to a
+              plethora of independent restaurants, food carts, breweries, and
+              coffee shops. The city has gained recognition for its
+              farm-to-table approach, focus on local and organic ingredients,
+              and diverse culinary offerings.
+            </p>
+          </Grid>
+          <Grid item xs={7}>
+            <h1 className="title">Outdoor recreation</h1>
+            <p className="about_info">
+              Portland offers numerous opportunities for outdoor activities.
+              Residents and visitors can enjoy hiking, biking, kayaking, skiing,
+              and other recreational pursuits within close proximity to the
+              city. The mild climate and nearby natural attractions make it an
+              ideal destination for outdoor enthusiasts.
+            </p>
+          </Grid>
+          <Grid item xs={5}>
+            <img src={img4} alt="Multnomah Falls" className="img1" />
           </Grid>
         </Grid>
       </Grid>

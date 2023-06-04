@@ -10,8 +10,10 @@
 .welcome {
   text-align: left;
   margin: 2%;
-  margin-top: 3%;
-  font-size: 28px;
+  margin-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 41px;
   font-weight: 600;
   font-family: "Mynerve", cursive;
 }
@@ -19,4 +21,17 @@
 .pic1 {
   width: 90%;
   height: 90%;
+}
+
+.img1 {
+  width: 100%;
+}
+
+.about_info {
+  text-align: left;
+  font-weight: 600;
+}
+
+.title {
+  margin-top: 5%;
 }

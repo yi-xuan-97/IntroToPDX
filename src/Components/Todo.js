@@ -150,12 +150,21 @@ function Todo() {
               onClick={handleToggle(value)}
             >
               <ListItemIcon>
-                <Checkbox
+                <input type="checkbox" checked={checked.indexOf(value) !== -1}
+                  tabIndex={-1}
+                  disableRipple
+                  id={labelId}
+                  className="checkbox"
+                  inputProps={{ "aria-labelledby": { labelId } }}/>
+                  <label for={labelId} className="hide">{labelId}</label>
+                {/* <Checkbox
                   checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
                   disableRipple
+                  id={labelId}
                   inputProps={{ "aria-labelledby": { labelId } }}
                 />
+                <label for={labelId} className="hide">{labelId}</label> */}
               </ListItemIcon>
               <ListItemText id={labelId} primary={`${value}`} />
               <IconButton
