@@ -64,6 +64,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "2%",
     marginRight: "2%",
   },
+  image: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
+  }
 }));
 
 function AboutPortland() {
@@ -255,7 +260,7 @@ function AboutPortland() {
             </ScrollMenu>
           </Grid>
         </Grid>
-        <Grid container className={classes.container} spacing={3}>
+        <Grid container className={classes.container} spacing={1}>
           <Grid item xs={5}>
             <img
               src={img1}
@@ -263,7 +268,8 @@ function AboutPortland() {
               className="img1"
             />
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={1}></Grid>
+          <Grid item xs={6}>
             <h1 className="title">Cultural uniqueness</h1>
             <p className="about_info">
               Portland is known for its vibrant and alternative culture. It
@@ -273,7 +279,7 @@ function AboutPortland() {
               eco-friendliness.
             </p>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={6}>
             <h1 className="title">Natural beauty</h1>
             <p className="about_info">
               Portland is surrounded by stunning natural beauty. The city is
@@ -283,6 +289,7 @@ function AboutPortland() {
               within the city also adds to its appeal.
             </p>
           </Grid>
+          <Grid item xs={1}></Grid>
           <Grid item xs={5}>
             <img src={img2} alt="Multnomah Falls" className="img1" />
           </Grid>
@@ -294,7 +301,8 @@ function AboutPortland() {
               className="img1"
             />
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={1}></Grid>
+          <Grid item xs={6}>
             <h1 className="title">Food and drink scene</h1>
             <p className="about_info">
               Portland has a renowned food and drink scene. It is home to a
@@ -304,7 +312,7 @@ function AboutPortland() {
               and diverse culinary offerings.
             </p>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={6}>
             <h1 className="title">Outdoor recreation</h1>
             <p className="about_info">
               Portland offers numerous opportunities for outdoor activities.
@@ -314,6 +322,7 @@ function AboutPortland() {
               ideal destination for outdoor enthusiasts.
             </p>
           </Grid>
+          <Grid item xs={1}></Grid>
           <Grid item xs={5}>
             <img src={img4} alt="Multnomah Falls" className="img1" />
           </Grid>

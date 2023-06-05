@@ -23,7 +23,7 @@ function Footer() {
   return (
     <div className="footer">
       <h1 className="foot_info">
-        More information about Portland can be find above
+        More information about Portland can be find below
       </h1>
       <a href="https://www.instagram.com/portland/">
         <span className="sr-only">Ins</span>
