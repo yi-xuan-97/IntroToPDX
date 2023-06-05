@@ -8,6 +8,9 @@ import "../Styles/About.css";
 const useStyles = makeStyles((theme) => ({
   pic: {
     marginLeft: theme.spacing(4),
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   textField: {
     width: "80%",
@@ -34,7 +37,7 @@ function About() {
             alt="portland water front park"
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} sm={7}>
           <p className="para">
             {" "}
             Hello there! I'm thrilled that you're interested in this website.

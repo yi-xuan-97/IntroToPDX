@@ -23,7 +23,6 @@ import img2 from "../Img/hike.jpeg";
 import img3 from "../Img/food.jpeg";
 import img4 from "../Img/value.webp";
 
-
 const useStyles = makeStyles((theme) => ({
   margin: {
     height: theme.spacing(3),
@@ -65,10 +64,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "2%",
   },
   image: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
-  }
+  },
 }));
 
 function AboutPortland() {
@@ -210,13 +209,13 @@ function AboutPortland() {
   return (
     <div className="aboutportland">
       <Grid container spacing={0}>
-        <Grid item xs={9}>
+        <Grid item xs={6} sm={9} >
           <p className="welcome">
             Prepare for rain in Portland throughout the year as it can occur at
             any time and any place
           </p>
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs={2} sm={1}>
           <img
             src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
             alt="weather icon"
@@ -241,7 +240,7 @@ function AboutPortland() {
             first{" "}
           </p>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3} sm={2}>
           <p className="temp_des">
             {temp}
             {u}
@@ -261,15 +260,15 @@ function AboutPortland() {
           </Grid>
         </Grid>
         <Grid container className={classes.container} spacing={1}>
-          <Grid item xs={5}>
+          <Grid className={classes.image} item xs={5}>
             <img
               src={img1}
               alt="sign of keep portland weird"
               className="img1"
             />
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={6}>
+          <Grid item className={classes.image} xs={1}></Grid>
+          <Grid item xs={12} sm={6}>
             <h1 className="title">Cultural uniqueness</h1>
             <p className="about_info">
               Portland is known for its vibrant and alternative culture. It
@@ -279,7 +278,7 @@ function AboutPortland() {
               eco-friendliness.
             </p>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <h1 className="title">Natural beauty</h1>
             <p className="about_info">
               Portland is surrounded by stunning natural beauty. The city is
@@ -289,20 +288,20 @@ function AboutPortland() {
               within the city also adds to its appeal.
             </p>
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={5}>
+          <Grid item className={classes.image} xs={1}></Grid>
+          <Grid item className={classes.image} xs={5}>
             <img src={img2} alt="Multnomah Falls" className="img1" />
           </Grid>
 
-          <Grid item xs={5}>
+          <Grid item className={classes.image} xs={5}>
             <img
               src={img3}
               alt="sign of keep portland weird"
               className="img1"
             />
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={6}>
+          <Grid item className={classes.image} xs={1}></Grid>
+          <Grid item xs={12} sm={6}>
             <h1 className="title">Food and drink scene</h1>
             <p className="about_info">
               Portland has a renowned food and drink scene. It is home to a
@@ -312,7 +311,7 @@ function AboutPortland() {
               and diverse culinary offerings.
             </p>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <h1 className="title">Outdoor recreation</h1>
             <p className="about_info">
               Portland offers numerous opportunities for outdoor activities.
@@ -322,8 +321,8 @@ function AboutPortland() {
               ideal destination for outdoor enthusiasts.
             </p>
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={5}>
+          <Grid item className={classes.image} xs={1}></Grid>
+          <Grid item className={classes.image} xs={5}>
             <img src={img4} alt="Multnomah Falls" className="img1" />
           </Grid>
         </Grid>

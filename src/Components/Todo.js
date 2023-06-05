@@ -34,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
     width: "30vw",
     height: "75vh",
     overflow: "auto",
+    [theme.breakpoints.down("sm")]: {
+      width: "38vw",
+      height: "70vh",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "75vw",
+      height: "60vh",
+    },
   },
   button: {
     margin: theme.spacing(0.5, 0),
@@ -42,6 +50,14 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: theme.spacing(8),
     bottom: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      right: theme.spacing(2),
+      bottom: theme.spacing(1),
+    },
+    [theme.breakpoints.down("xs")]: {
+      right: theme.spacing(0),
+      bottom: theme.spacing(1),
+    },
   },
   input: {
     width: "100%",
@@ -52,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2%",
     position: "absolute",
   },
+  done: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
+  }
 }));
 
 function not(a, b) {
@@ -150,13 +171,18 @@ function Todo() {
               onClick={handleToggle(value)}
             >
               <ListItemIcon>
-                <input type="checkbox" checked={checked.indexOf(value) !== -1}
+                <input
+                  type="checkbox"
+                  checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
                   disableRipple
                   id={labelId}
                   className="checkbox"
-                  inputProps={{ "aria-labelledby": { labelId } }}/>
-                  <label for={labelId} className="hide">{labelId}</label>
+                  inputProps={{ "aria-labelledby": { labelId } }}
+                />
+                <label for={labelId} className="hide">
+                  {labelId}
+                </label>
                 {/* <Checkbox
                   checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
@@ -286,7 +312,7 @@ function Todo() {
         </h1>
       </Grid>
       <Grid item>{customList(left, "TO DO :)")}</Grid>
-      <Grid item>
+      <Grid item className={classes.done}>
         <Grid container direction="column" alignItems="center">
           <Button
             variant="outlined"
@@ -330,7 +356,7 @@ function Todo() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList(right, "DONE!!")}</Grid>
+      <Grid item className={classes.done}>{customList(right, "DONE!!")}</Grid>
       <Grid item className={classes.but}>
         <Fab className={classes.add} color="primary" aria-label="add">
           <AddIcon onClick={handleClickOpen} />

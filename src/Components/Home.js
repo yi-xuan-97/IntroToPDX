@@ -9,6 +9,11 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: "12vh",
   },
+  pic: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  }
 }));
 
 function Home() {
@@ -25,7 +30,7 @@ function Home() {
             alt="portland water front park"
           />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={8}>
           <p className="home_intro">
             Portland, Oregon is a vibrant city in the Pacific Northwest region
             of the United States, and if it were a website, it would be a

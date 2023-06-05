@@ -35,3 +35,10 @@
 .title {
   margin-top: 5%;
 }
+
+@media (max-width: 600px) {
+
+  .welcome {
+    font-size: 28px;
+  }
+}

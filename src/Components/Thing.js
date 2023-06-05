@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme) => ({
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
-  day: {
-    // marginTop: theme.spacing(2)),
-  },
   heading: {
     margin: "auto",
     fontSize: "20px",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   alert: {
     width: "80%",
