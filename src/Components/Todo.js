@@ -5,7 +5,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
@@ -72,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       display: "none",
     },
-  }
+  },
 }));
 
 function not(a, b) {
@@ -356,7 +355,9 @@ function Todo() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item className={classes.done}>{customList(right, "DONE!!")}</Grid>
+      <Grid item className={classes.done}>
+        {customList(right, "DONE!!")}
+      </Grid>
       <Grid item className={classes.but}>
         <Fab className={classes.add} color="primary" aria-label="add">
           <AddIcon onClick={handleClickOpen} />

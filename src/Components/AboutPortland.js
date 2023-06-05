@@ -209,7 +209,7 @@ function AboutPortland() {
   return (
     <div className="aboutportland">
       <Grid container spacing={0}>
-        <Grid item xs={6} sm={9} >
+        <Grid item xs={6} sm={9}>
           <p className="welcome">
             Prepare for rain in Portland throughout the year as it can occur at
             any time and any place
