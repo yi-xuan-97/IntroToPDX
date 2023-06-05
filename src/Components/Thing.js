@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   web: {
     textAlign: "left",
-  }
+  },
 }));
 
 function Things() {
@@ -83,15 +83,13 @@ function Things() {
       return (
         <Accordion>
           <AccordionSummary>
-            <a href={value.url}>
-              <img
-                src={value.logo}
-                alt={`logo of${value.title}`}
-                onClick={(event) => event.stopPropagation()}
-                width={90}
-                height={80}
-              />
-            </a>
+            <img
+              src={value.logo}
+              alt={`logo of${value.title}`}
+              onClick={(event) => event.stopPropagation()}
+              width={90}
+              height={80}
+            />
             <Typography className={classes.heading}>{value.title}</Typography>
             <Button
               data-button-key={value.title}
@@ -105,7 +103,14 @@ function Things() {
             </Button>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{value.description}{<p className={classes.web}>Click <a href={value.url}>here</a> to visit website</p>}</Typography>
+            <Typography>
+              {value.description}
+              {
+                <p className={classes.web}>
+                  Click <a href={value.url}>here to visit website</a>{" "}
+                </p>
+              }
+            </Typography>
           </AccordionDetails>
         </Accordion>
       );
@@ -131,11 +136,7 @@ function Things() {
       <Timeline align="alternate">
         <TimelineItem>
           <TimelineOppositeContent>
-            <Typography
-              variant="h4"
-              className={classes.day}
-              color="primary"
-            >
+            <Typography variant="h4" className={classes.day} color="primary">
               Food and drink
             </Typography>
           </TimelineOppositeContent>
@@ -150,11 +151,7 @@ function Things() {
 
         <TimelineItem>
           <TimelineOppositeContent>
-            <Typography
-              variant="h4"
-              className={classes.day}
-              color="primary"
-            >
+            <Typography variant="h4" className={classes.day} color="primary">
               Attraction
             </Typography>
           </TimelineOppositeContent>
@@ -167,14 +164,9 @@ function Things() {
           <TimelineContent>{list(street)}</TimelineContent>
         </TimelineItem>
 
-
         <TimelineItem>
           <TimelineOppositeContent>
-            <Typography
-              variant="h4"
-              className={classes.day}
-              color="primary"
-            >
+            <Typography variant="h4" className={classes.day} color="primary">
               Shop
             </Typography>
           </TimelineOppositeContent>
@@ -188,11 +180,7 @@ function Things() {
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
-            <Typography
-              variant="h4"
-              className={classes.day}
-              color="primary"
-            >
+            <Typography variant="h4" className={classes.day} color="primary">
               Nature View
             </Typography>
           </TimelineOppositeContent>
