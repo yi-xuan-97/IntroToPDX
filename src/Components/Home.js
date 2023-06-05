@@ -30,7 +30,8 @@ function Home() {
             alt="portland water front park"
           />
         </Grid>
-        <Grid item xs={12} sm={8}>
+        <Grid item md={1}></Grid>
+        <Grid item sm={12} md={7}>
           <p className="home_intro">
             Portland, Oregon is a vibrant city in the Pacific Northwest region
             of the United States, and if it were a website, it would be a

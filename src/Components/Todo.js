@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2%",
   },
   paper: {
-    width: "30vw",
+    width: "35vw",
     height: "75vh",
     overflow: "auto",
     [theme.breakpoints.down("sm")]: {
@@ -47,15 +47,15 @@ const useStyles = makeStyles((theme) => ({
   },
   but: {
     position: "absolute",
-    right: theme.spacing(8),
-    bottom: theme.spacing(5),
+    right: theme.spacing(4),
+    bottom: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       right: theme.spacing(2),
       bottom: theme.spacing(1),
     },
     [theme.breakpoints.down("xs")]: {
       right: theme.spacing(0),
-      bottom: theme.spacing(1),
+      bottom: theme.spacing(8),
     },
   },
   input: {
@@ -307,7 +307,7 @@ function Todo() {
           </Alert>
         </Collapse>
         <h1 className="todo_title">
-          Add your Todos manually or from Things to do page
+          Manage your Todos
         </h1>
       </Grid>
       <Grid item>{customList(left, "TO DO :)")}</Grid>

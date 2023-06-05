@@ -103,10 +103,10 @@ function Things() {
             </Button>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography className={classes.web}>
               {value.description}
               {
-                <p className={classes.web}>
+                <p>
                   Click <a href={value.url}>here to visit website</a>{" "}
                 </p>
               }
